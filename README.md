@@ -12,4 +12,4 @@ Users will input and rate a list of food trucks, then view the average rating an
 * Eclipse
 
 ## Lessons Learned
-# FoodTruckProject
+
