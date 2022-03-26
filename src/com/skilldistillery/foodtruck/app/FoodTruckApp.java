@@ -25,13 +25,23 @@ public class FoodTruckApp {
 			if (truckName.equalsIgnoreCase("quit")) {
 				break;
 			} else {
+				System.out.println();
 				System.out.print("What kind of food does the truck sell?: ");
 				cuisine = kb.nextLine();
-				System.out.print("Enter a rating from 1.0 to 5.0: ");
-				rating = kb.nextDouble();
+				while (true) {
+					System.out.println();
+					System.out.print("Enter a rating from 1.0 to 5.0: ");
+					rating = kb.nextDouble();
+					if (rating < 5.0 && rating > 1.0) {
+						break;
+					} else {
+						System.out.println("\n\tRating must fall between 1.0 and 5.0\n");
+						continue;
+					}
+				}
 				// TODO could below be better?
 				foodTrucks[counter] = new FoodTruck(truckName, cuisine, rating);
-				System.out.println(foodTrucks[counter].getNextTruckId());
+//				System.out.println(foodTrucks[counter].getNextTruckId());
 				counter++;
 				kb.nextLine();
 			}
@@ -59,7 +69,7 @@ public class FoodTruckApp {
 				System.exit(0);
 			} else if (choice.equals("1")) {
 				if (count == 0) {
-					System.out.println("\tNothing to display, please add some trucks!\n");
+					System.out.println("\tNothing to display!\n");
 				} else {
 					for (int i = 0; i < count; i++) {
 						System.out.println(foodTrucks[i].toString() + "\n");
@@ -67,8 +77,9 @@ public class FoodTruckApp {
 				}
 			} else if (choice.equals("2")) {
 				// TODO rounding is incorrect
-				System.out.println("\tThe average rating of all " + count + " food trucks is "
-						+ Math.round(foodTrucks[0].getAverage()));
+				double newAvg = Math.round(foodTrucks[0].getAverage() * 100);
+				newAvg /= 100;
+				System.out.println("\tThe average rating of all " + count + " food trucks is " + newAvg + "\n");
 			} else if (choice.equals("3")) {
 				FoodTruck highest = null;
 				double rating = 0;

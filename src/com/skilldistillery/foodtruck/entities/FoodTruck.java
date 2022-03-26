@@ -65,7 +65,7 @@ public class FoodTruck {
 	public String toString() {
 		String result;
 		this.truckName = getTruckName();
-		result = "Food truck:\t" + this.truckName + "\n" + "Cuisine:\t" + this.cuisine + "\n" + "Rating:\t\t"
+		result = "\tFood truck: " + this.truckName + "\n" + "\tCuisine: " + this.cuisine + "\n" + "\tRating:\t "
 				+ this.rating + "\n";
 		return result;
 	}
