@@ -1,8 +1,8 @@
 package com.skilldistillery.foodtruck.entities;
 
 public class FoodTruck {
-	private static int nextTruckId = 0000;
-	private static int globalRatings;
+	private static int nextTruckId = 0;
+	private static double globalRatings;
 	private int truckId;
 	private String truckName;
 	private String cuisine;
@@ -13,21 +13,16 @@ public class FoodTruck {
 	}
 
 	public FoodTruck(String truckName, String cuisine, double rating) {
-		this.truckId = nextTruckId;
+		setTruckId();
 		this.truckName = truckName;
 		this.cuisine = cuisine;
 		this.rating = rating;
-
-		globalRatings += this.rating;
 		nextTruckId++;
+		globalRatings += this.rating;
 	}
 
 	public int getTruckId() {
 		return truckId;
-	}
-
-	public void setTruckId(int truckId) {
-		this.truckId = truckId;
 	}
 
 	public String getTruckName() {
@@ -55,14 +50,23 @@ public class FoodTruck {
 	}
 
 	public int getNextTruckId() {
-
+		return nextTruckId;
 	}
 
-	public int getGlobalRatings() {
+	private void setTruckId() {
+		this.truckId = nextTruckId;
+	}
 
+	public double getAverage() {
+		double result = globalRatings / nextTruckId;
+		return result;
 	}
 
 	public String toString() {
-
+		String result;
+		this.truckName = getTruckName();
+		result = "Food truck:\t" + this.truckName + "\n" + "Cuisine:\t" + this.cuisine + "\n" + "Rating:\t\t"
+				+ this.rating + "\n";
+		return result;
 	}
 }
