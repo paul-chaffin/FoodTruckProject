@@ -39,7 +39,6 @@ public class FoodTruckApp {
 						continue;
 					}
 				}
-				// TODO could below be better?
 				foodTrucks[counter] = new FoodTruck(truckName, cuisine, rating);
 //				System.out.println(foodTrucks[counter].getNextTruckId());
 				counter++;
@@ -78,7 +77,6 @@ public class FoodTruckApp {
 					}
 				}
 			} else if (choice.equals("2")) {
-				// TODO rounding is incorrect
 				double newAvg = Math.round(foodTrucks[0].getAverage() * 100);
 				newAvg /= 100;
 				System.out.println("\tThe average rating of all " + count + " food trucks is " + newAvg + "\n");
