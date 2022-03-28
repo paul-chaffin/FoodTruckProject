@@ -55,6 +55,7 @@ public class FoodTruckApp {
 		while (true) {
 			String choice = "";
 			System.out.println("-------Main Menu------");
+			System.out.println();
 			System.out.println("1. List Food Trucks");
 			System.out.println("2. Show Average Rating");
 			System.out.println("3. Show Highest Rating");
