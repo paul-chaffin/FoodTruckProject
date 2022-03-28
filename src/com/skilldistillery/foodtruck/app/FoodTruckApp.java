@@ -66,6 +66,7 @@ public class FoodTruckApp {
 			kb.nextLine();
 			if (choice.equalsIgnoreCase("q")) {
 				kb.close();
+				System.out.println("Exiting program.");
 				System.exit(0);
 			} else if (choice.equals("1")) {
 				if (count == 0) {
