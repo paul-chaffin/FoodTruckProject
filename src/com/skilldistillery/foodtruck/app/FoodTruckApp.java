@@ -32,7 +32,7 @@ public class FoodTruckApp {
 					System.out.println();
 					System.out.print("Enter a rating from 1.0 to 5.0: ");
 					rating = kb.nextDouble();
-					if (rating < 5.0 && rating > 1.0) {
+					if (rating <= 5.0 && rating >= 1.0) {
 						break;
 					} else {
 						System.out.println("\n\tRating must fall between 1.0 and 5.0\n");
